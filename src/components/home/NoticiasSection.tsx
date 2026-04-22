@@ -161,7 +161,7 @@ export function NoticiasSection() {
         {/* Bottom CTA */}
         <div className="mt-10 text-center">
           <Link
-            href="#"
+            href="/noticias"
             className="inline-flex items-center gap-2 border-2 border-isa-pink-500 text-isa-pink-500 hover:bg-isa-pink-500 hover:text-white font-semibold px-8 py-3 rounded-pill transition-colors"
           >
             Ver Todas as Notícias

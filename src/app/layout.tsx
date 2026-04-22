@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatBotWidget } from "@/components/chatbot/ChatBotWidget";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 
 const nunito = Nunito({
   subsets: ["latin-ext"],
@@ -47,6 +49,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <ChatBotWidget />
+        <BackToTop />
+        <CookieConsent />
       </body>
     </html>
   );
