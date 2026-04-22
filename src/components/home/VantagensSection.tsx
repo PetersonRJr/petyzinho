@@ -86,9 +86,6 @@ export function VantagensSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <span className="inline-block bg-isa-teal-50 text-isa-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
-              Para Profissionais
-            </span>
             <h2 className="text-3xl md:text-4xl font-black text-isa-gray-800">
               Vantagens de trabalhar com a ISA
             </h2>
