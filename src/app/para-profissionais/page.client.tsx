@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
+import { AppPreviewMockup } from "@/components/professionals/AppPreviewMockup";
 import { staggerContainer, fadeUpVariant } from "@/lib/animations";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -23,101 +24,105 @@ import {
   Banknote,
   ArrowRight,
   Stethoscope,
+  BadgeCheck,
 } from "lucide-react";
 
 const benefits = [
   {
     icon: <Clock className="w-6 h-6 text-isa-pink-500" />,
-    title: "Horários flexíveis",
+    title: "Você no controle da agenda",
     description:
-      "Você escolhe quando e onde trabalhar. Aceite chamados que se encaixam na sua agenda.",
+      "Escolha os dias, horários e regiões que quiser. Sem escala, sem chefia, sem obrigação de mínimo.",
   },
   {
     icon: <DollarSign className="w-6 h-6 text-isa-green-500" />,
-    title: "Renda extra garantida",
+    title: "Ganhos por atendimento",
     description:
-      "Receba por cada atendimento realizado, com pagamento rápido e transparente.",
+      "Receba por cada atendimento concluído. Quanto mais você atender, mais você ganha — simples assim.",
   },
   {
     icon: <MapPin className="w-6 h-6 text-isa-teal" />,
-    title: "Atendimentos próximos",
+    title: "Chamados perto de você",
     description:
-      "Receba notificações de chamados disponíveis na sua região, sem deslocamentos longos.",
+      "Receba notificações de oportunidades na sua região. Sem deslocamentos desnecessários.",
   },
   {
     icon: <Shield className="w-6 h-6 text-isa-pink-600" />,
-    title: "Segurança jurídica",
+    title: "Respaldo jurídico",
     description:
-      "Trabalhe com respaldo: documentação clara, contratos digitais e suporte da plataforma.",
+      "Contratos digitais claros, documentação transparente e suporte da plataforma em cada atendimento.",
   },
   {
     icon: <UserCheck className="w-6 h-6 text-isa-pink-500" />,
-    title: "Validação profissional",
+    title: "Perfil validado e visível",
     description:
-      "Seu perfil validado aumenta sua credibilidade e dá segurança aos pacientes.",
+      "Sua credencial verificada pela ISA aumenta sua credibilidade e abre mais oportunidades.",
   },
   {
     icon: <Smartphone className="w-6 h-6 text-isa-gray-600" />,
-    title: "Tudo pelo app",
+    title: "Gestão 100% pelo app",
     description:
-      "Gerencie seus chamados, histórico e pagamentos diretamente pelo app ISA Saúde.",
+      "Chamados, histórico de atendimentos e pagamentos — tudo em um só lugar, no seu celular.",
   },
 ];
 
 const steps = [
   {
     icon: <UserPlus className="w-6 h-6 text-white" />,
-    title: "Crie sua conta",
-    description: "Baixe o app e faça seu cadastro com seus dados profissionais.",
+    title: "Crie seu perfil",
+    description: "Baixe o app e cadastre seus dados profissionais. Gratuito e 100% digital.",
     color: "bg-isa-pink-500",
   },
   {
     icon: <FileText className="w-6 h-6 text-white" />,
-    title: "Envie os documentos",
-    description:
-      "Envie COREN/CRM, documentos pessoais e comprovante de qualificação.",
+    title: "Envie seus documentos",
+    description: "COREN/CRM, documentos pessoais e comprovante de qualificação.",
     color: "bg-isa-pink-600",
   },
   {
     icon: <ShieldCheck className="w-6 h-6 text-white" />,
-    title: "Seja validado",
-    description: "Nossa equipe analisa e valida seu perfil em até 48 horas.",
+    title: "Validação em 48h",
+    description: "Nossa equipe verifica seu perfil e te dá acesso à plataforma.",
     color: "bg-isa-teal",
   },
   {
     icon: <Bell className="w-6 h-6 text-white" />,
-    title: "Receba chamados",
-    description: "Aceite atendimentos próximos de você com um toque no app.",
+    title: "Receba oportunidades",
+    description: "Aceite ou recuse chamados na sua região com um toque no app.",
     color: "bg-isa-green-500",
   },
   {
     icon: <Banknote className="w-6 h-6 text-white" />,
-    title: "Receba seu pagamento",
-    description: "Pagamento garantido após cada atendimento concluído.",
+    title: "Receba após cada atendimento",
+    description: "Pagamento garantido e rastreável direto na sua conta.",
     color: "bg-isa-pink-700",
   },
 ];
 
 const faqs = [
   {
-    q: "Quanto tempo leva a validação do meu cadastro?",
-    a: "Nossa equipe analisa cada cadastro com cuidado e o processo leva entre 24 a 48 horas úteis após o envio completo dos documentos.",
+    q: "Existe vínculo empregatício com a ISA?",
+    a: "Não. A ISA é uma plataforma de conexão. Você atua como profissional autônomo, com total liberdade para aceitar ou recusar atendimentos, sem vínculos trabalhistas.",
+  },
+  {
+    q: "Preciso ter CNPJ para me cadastrar?",
+    a: "Não é obrigatório. Você pode atender como pessoa física (CPF). Nossa equipe orienta sobre as melhores opções conforme seu perfil.",
+  },
+  {
+    q: "Quanto tempo leva a validação do meu perfil?",
+    a: "Nossa equipe analisa cada cadastro com cuidado. O processo leva entre 24 a 48 horas úteis após o envio completo dos documentos.",
   },
   {
     q: "Quais profissionais podem se cadastrar?",
-    a: "Enfermeiros, técnicos em enfermagem, fisioterapeutas, fonoaudiólogos, nutricionistas, cuidadores de idosos e outros profissionais da área da saúde com registro ativo no conselho profissional.",
+    a: "Enfermeiros, técnicos em enfermagem, fisioterapeutas, fonoaudiólogos, nutricionistas, cuidadores de idosos e demais profissionais de saúde com registro ativo no conselho.",
   },
   {
-    q: "Como funciona o pagamento?",
-    a: "O pagamento é realizado diretamente pela plataforma após a conclusão de cada atendimento. Os valores variam conforme o tipo de serviço e são informados no momento do chamado.",
+    q: "Como funciona o recebimento?",
+    a: "O pagamento é processado pela plataforma após cada atendimento concluído. Os valores são informados antes de você aceitar o chamado — sem surpresas.",
   },
   {
-    q: "Preciso ter CNPJ para trabalhar com a ISA?",
-    a: "Não é obrigatório ter CNPJ. Você pode trabalhar como pessoa física (CPF). Nossa equipe orienta sobre as melhores opções para sua situação.",
-  },
-  {
-    q: "Posso escolher quais chamados aceitar?",
-    a: "Sim! Você tem total liberdade para aceitar ou recusar chamados. Não há mínimo de atendimentos por período.",
+    q: "Posso recusar chamados?",
+    a: "Sim, sempre. Você tem total autonomia para aceitar ou recusar qualquer oportunidade, sem justificativa e sem penalidades.",
   },
 ];
 
@@ -135,15 +140,21 @@ export default function ParaProfissionaisPage() {
               Para Profissionais de Saúde
             </Tag>
             <h1 className="font-display font-extrabold text-4xl md:text-5xl mb-6 leading-tight">
-              Trabalhe com liberdade.
+              Seja parceiro ISA.
               <br />
-              Ganhe mais. Cuide melhor.
+              Atenda no seu tempo. Ganhe mais.
             </h1>
-            <p className="text-lg text-isa-pink-100 mb-8 max-w-2xl">
-              Junte-se a mais de 1.200 profissionais que usam a ISA para
-              encontrar atendimentos domiciliares com flexibilidade, segurança e
-              boa remuneração.
+            <p className="text-lg text-isa-pink-100 mb-4 max-w-2xl">
+              Mais de 1.200 profissionais autônomos usam a ISA para encontrar
+              oportunidades de atendimento domiciliar — com liberdade total,
+              sem vínculo empregatício.
             </p>
+            <div className="flex items-center gap-2 mb-8">
+              <BadgeCheck className="w-4 h-4 text-isa-green-400" />
+              <span className="text-sm text-isa-green-300 font-medium">
+                100% autônomo · Sem vínculo trabalhista · Sem mínimo de atendimentos
+              </span>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 href="/trabalhe-conosco"
@@ -152,7 +163,7 @@ export default function ParaProfissionaisPage() {
                 rightIcon={<ArrowRight className="w-5 h-5" />}
                 className="bg-white text-isa-pink-700 hover:bg-isa-gray-100"
               >
-                Quero me cadastrar
+                Quero ser parceiro
               </Button>
               <Button
                 href="#como-funciona"
@@ -171,9 +182,9 @@ export default function ParaProfissionaisPage() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            pill="Benefícios"
-            title="Por que trabalhar com a ISA?"
-            subtitle="Mais do que uma plataforma — somos parceiros do seu crescimento profissional."
+            pill="Vantagens"
+            title="Por que ser parceiro ISA?"
+            subtitle="Você cuida dos pacientes. A ISA cuida de todo o resto — burocracia, pagamento e suporte."
           />
           <motion.div
             variants={staggerContainer}
@@ -201,6 +212,8 @@ export default function ParaProfissionaisPage() {
         </div>
       </section>
 
+      <AppPreviewMockup />
+
       {/* How it works */}
       <section id="como-funciona" className="py-20 md:py-28 bg-isa-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -219,15 +232,11 @@ export default function ParaProfissionaisPage() {
                 transition={{ delay: i * 0.1 }}
                 className="flex items-start gap-4"
               >
-                <div
-                  className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center flex-shrink-0 shadow`}
-                >
+                <div className={`w-12 h-12 rounded-full ${step.color} flex items-center justify-center flex-shrink-0 shadow`}>
                   {step.icon}
                 </div>
                 <div className="pt-1">
-                  <h3 className="font-display font-bold text-isa-gray-900 mb-1">
-                    {step.title}
-                  </h3>
+                  <h3 className="font-display font-bold text-isa-gray-900 mb-1">{step.title}</h3>
                   <p className="text-sm text-isa-gray-600">{step.description}</p>
                 </div>
               </motion.div>
@@ -236,7 +245,7 @@ export default function ParaProfissionaisPage() {
           <div className="text-center mt-10">
             <Button href="/trabalhe-conosco" variant="primary" size="lg">
               <Stethoscope className="w-5 h-5 mr-2" />
-              Começar agora
+              Quero ser parceiro
             </Button>
           </div>
         </div>
@@ -245,10 +254,7 @@ export default function ParaProfissionaisPage() {
       {/* FAQ */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            pill="Dúvidas frequentes"
-            title="Perguntas de profissionais"
-          />
+          <SectionHeading pill="Dúvidas frequentes" title="Perguntas de profissionais" />
           <Accordion.Root type="single" collapsible className="space-y-3">
             {faqs.map((faq, i) => (
               <Accordion.Item
