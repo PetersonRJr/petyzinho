@@ -1,5 +1,7 @@
 import { HeroSection } from "@/components/home/HeroSection";
+import { PartnersSection } from "@/components/home/PartnersSection";
 import { ProfessionalHeroSection } from "@/components/home/ProfessionalHeroSection";
+import { ComoFuncionaSection } from "@/components/home/ComoFuncionaSection";
 import { VantagensSection } from "@/components/home/VantagensSection";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
 import { NoticiasSection } from "@/components/home/NoticiasSection";
@@ -14,13 +16,15 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <PartnersSection />
       <ProfessionalHeroSection />
+      <ComoFuncionaSection />
       <VantagensSection />
       <AppDownloadSection />
-      <NoticiasSection />
       <ServicesSection />
       <StatsSection />
       <TestimonialsSection />
+      <NoticiasSection />
       <WhereWeAreSection />
       <ProfessionalsSection />
       <CTASection />
