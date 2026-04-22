@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Zap, Clock, CheckCircle, ShieldCheck, ChevronDown, Phone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Testes Rápidos em Casa",
+  description:
+    "Testes rápidos em casa para COVID-19, influenza, HIV, dengue e mais. Resultado em minutos. Profissional certificado vai ao seu endereço com segurança.",
+  keywords: ["teste rápido em casa", "teste COVID domiciliar", "teste rápido domiciliar", "diagnóstico rápido"],
+};
 
 const testes = [
   { name: "COVID-19 (Antígeno)", time: "15 min", desc: "Resultado rápido com alta precisão" },

@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Heart, ShieldCheck, Clock, Users, Star, Phone, ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Atendimento Domiciliar",
+  description:
+    "Profissionais de saúde validados para atendimento domiciliar em casa. Enfermagem, fisioterapia, cuidados pós-operatórios e muito mais. Atendimento 24h.",
+  keywords: ["atendimento domiciliar", "home care", "enfermagem domiciliar", "internação domiciliar"],
+};
 
 const features = [
   {

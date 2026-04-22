@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, Clock, CheckCircle, Calendar, ChevronDown, Phone } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Vacinação em Casa",
+  description:
+    "Vacinação domiciliar segura e conveniente. Influenza, COVID-19, hepatite, dengue e muito mais. Profissional vai até você com toda a cadeia de frio garantida.",
+  keywords: ["vacinação em casa", "vacina domiciliar", "vacina em casa", "vacinação domiciliar"],
+};
 
 const vacinas = [
   { name: "Influenza (Gripe)", detail: "Recomendada anualmente para todos os públicos" },

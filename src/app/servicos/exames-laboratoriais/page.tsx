@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FlaskConical, CheckCircle, Calendar, FileText, ChevronDown, Phone, Mail, Clock } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Exames Laboratoriais em Casa",
+  description:
+    "Coleta de exames laboratoriais no conforto da sua casa. Atendemos convênios e particular. Resultados enviados por e-mail com rapidez e segurança.",
+  keywords: ["exames laboratoriais em casa", "coleta domiciliar", "exames em casa", "coleta de sangue"],
+};
 
 const convenios = [
   "Allianz", "Amafresp", "Ameplan", "Amil",
