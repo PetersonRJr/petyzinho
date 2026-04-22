@@ -6,6 +6,10 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
+import { EarningsCalculator } from "@/components/home/EarningsCalculator";
+import { ComparisonTable } from "@/components/home/ComparisonTable";
+import { LiveCounter } from "@/components/home/LiveCounter";
+import { RegionalDemandSection } from "@/components/home/RegionalDemandSection";
 import { staggerContainer, fadeUpVariant } from "@/lib/animations";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -33,13 +37,13 @@ const benefits = [
       "Você escolhe quando e onde trabalhar. Aceite chamados que se encaixam na sua agenda.",
   },
   {
-    icon: <DollarSign className="w-6 h-6 text-isa-green-500" />,
+    icon: <DollarSign className="w-6 h-6 text-green-500" />,
     title: "Renda extra garantida",
     description:
       "Receba por cada atendimento realizado, com pagamento rápido e transparente.",
   },
   {
-    icon: <MapPin className="w-6 h-6 text-isa-teal" />,
+    icon: <MapPin className="w-6 h-6 text-isa-teal-500" />,
     title: "Atendimentos próximos",
     description:
       "Receba notificações de chamados disponíveis na sua região, sem deslocamentos longos.",
@@ -82,13 +86,13 @@ const steps = [
     icon: <ShieldCheck className="w-6 h-6 text-white" />,
     title: "Seja validado",
     description: "Nossa equipe analisa e valida seu perfil em até 48 horas.",
-    color: "bg-isa-teal",
+    color: "bg-isa-teal-500",
   },
   {
     icon: <Bell className="w-6 h-6 text-white" />,
     title: "Receba chamados",
     description: "Aceite atendimentos próximos de você com um toque no app.",
-    color: "bg-isa-green-500",
+    color: "bg-green-500",
   },
   {
     icon: <Banknote className="w-6 h-6 text-white" />,
@@ -126,7 +130,7 @@ export default function ParaProfissionaisPage() {
     <>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-isa-dark via-isa-pink-700 to-isa-pink-700 text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-white blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,6 +171,9 @@ export default function ParaProfissionaisPage() {
         </div>
       </section>
 
+      {/* Live Counter */}
+      <LiveCounter />
+
       {/* Benefits */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,6 +207,15 @@ export default function ParaProfissionaisPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Earnings Calculator */}
+      <EarningsCalculator />
+
+      {/* Comparison Table */}
+      <ComparisonTable />
+
+      {/* Regional Demand */}
+      <RegionalDemandSection />
 
       {/* How it works */}
       <section id="como-funciona" className="py-20 md:py-28 bg-isa-gray-50">
