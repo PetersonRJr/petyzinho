@@ -11,6 +11,9 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { WhereWeAreSection } from "@/components/home/WhereWeAreSection";
 import { ProfessionalsSection } from "@/components/home/ProfessionalsSection";
 import { CTASection } from "@/components/home/CTASection";
+import { EarningsSimulator } from "@/components/home/EarningsSimulator";
+import { VagasMapSection } from "@/components/home/VagasMapSection";
+import { FAQSection } from "@/components/home/FAQSection";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { Divider } from "@/components/ui/Divider";
 
@@ -27,6 +30,10 @@ export default function HomePage() {
 
       <FadeInSection><VantagensSection /></FadeInSection>
 
+      <FadeInSection><EarningsSimulator /></FadeInSection>
+
+      <FadeInSection><VagasMapSection /></FadeInSection>
+
       {/* Dark section + wave transition to white */}
       <div className="bg-isa-dark">
         <AppDownloadSection />
@@ -40,6 +47,8 @@ export default function HomePage() {
       <FadeInSection><TestimonialsSection /></FadeInSection>
 
       <FadeInSection><NoticiasSection /></FadeInSection>
+
+      <FadeInSection><FAQSection /></FadeInSection>
 
       <FadeInSection><WhereWeAreSection /></FadeInSection>
 
