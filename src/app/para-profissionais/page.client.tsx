@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
+import { AppPreviewMockup } from "@/components/professionals/AppPreviewMockup";
 import { staggerContainer, fadeUpVariant } from "@/lib/animations";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -200,6 +201,8 @@ export default function ParaProfissionaisPage() {
           </motion.div>
         </div>
       </section>
+
+      <AppPreviewMockup />
 
       {/* How it works */}
       <section id="como-funciona" className="py-20 md:py-28 bg-isa-gray-50">
