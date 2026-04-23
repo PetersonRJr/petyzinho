@@ -9,7 +9,7 @@ import { CTASection } from "@/components/home/CTASection";
 import { EarningsSimulator } from "@/components/home/EarningsSimulator";
 import { VagasMapSection } from "@/components/home/VagasMapSection";
 import { FAQSection } from "@/components/home/FAQSection";
-import { ComparisonTable } from "@/components/home/ComparisonTable";
+import { NoticiasSection } from "@/components/home/NoticiasSection";
 import { StickyMobileCTA } from "@/components/home/StickyMobileCTA";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { Divider } from "@/components/ui/Divider";
@@ -29,8 +29,6 @@ export default function HomePage() {
 
       <FadeInSection><EarningsSimulator /></FadeInSection>
 
-      <FadeInSection><ComparisonTable /></FadeInSection>
-
       <FadeInSection><VagasMapSection /></FadeInSection>
 
       {/* Dark section + wave transition to white */}
@@ -42,6 +40,8 @@ export default function HomePage() {
       <FadeInSection><StatsSection /></FadeInSection>
 
       <FadeInSection><TestimonialsSection /></FadeInSection>
+
+      <FadeInSection><NoticiasSection /></FadeInSection>
 
       <FadeInSection><FAQSection /></FadeInSection>
 

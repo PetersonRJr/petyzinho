@@ -8,7 +8,6 @@ import { Tag } from "@/components/ui/Tag";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
 import { AppPreviewMockup } from "@/components/professionals/AppPreviewMockup";
 import { EarningsSimulator } from "@/components/home/EarningsSimulator";
-import { ComparisonTable } from "@/components/home/ComparisonTable";
 import { LiveCounter } from "@/components/home/LiveCounter";
 import { VagasMapSection } from "@/components/home/VagasMapSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -251,9 +250,6 @@ export default function ParaProfissionaisPage() {
 
       {/* Earnings Simulator */}
       <EarningsSimulator />
-
-      {/* Comparison Table */}
-      <ComparisonTable />
 
       {/* Regional Demand */}
       <VagasMapSection />
