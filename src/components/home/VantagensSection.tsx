@@ -87,10 +87,10 @@ export function VantagensSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <h2 className="text-3xl md:text-4xl font-black text-isa-gray-800">
-              Vantagens de trabalhar com a ISA
+              Vantagens de ser um profissional ISA
             </h2>
             <p className="text-isa-gray-500 mt-2">
-              Mais autonomia, mais ganhos e suporte completo para a sua carreira
+              Faça parte de uma rede exclusiva e tenha autonomia, ganhos maiores e suporte completo
             </p>
           </div>
           <Link
