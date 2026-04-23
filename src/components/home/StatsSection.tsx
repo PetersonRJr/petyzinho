@@ -1,13 +1,13 @@
 "use client";
 
-import { Users, Star, Clock, Award } from "lucide-react";
+import { Users, Star, TrendingUp, Clock } from "lucide-react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 const stats = [
-  { icon: Users, value: 500, suffix: " milhões+", label: "Atendimentos realizados" },
-  { icon: Star, value: 90, suffix: "+", label: "NPS — Índice de satisfação", prefix: "" },
-  { icon: Clock, value: 24, suffix: "h", label: "Tempo médio de agendamento", prefix: "< " },
-  { icon: Award, value: 10, suffix: "+ anos", label: "De experiência" },
+  { icon: Users, value: 1200, suffix: "+", label: "Profissionais parceiros ativos" },
+  { icon: Star, value: 90, suffix: "+", label: "NPS — Satisfação dos profissionais" },
+  { icon: TrendingUp, value: 4, suffix: "x mais", label: "Ganhos médios vs. modelo CLT" },
+  { icon: Clock, value: 48, suffix: "h", label: "Validação do perfil em até", prefix: "< " },
 ];
 
 export function StatsSection() {
