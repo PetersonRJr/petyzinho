@@ -18,13 +18,13 @@ const benefits = [
     icon: Shield,
     number: "zero",
     highlight: "burocracia",
-    desc: "Contratos digitais, suporte jurídico e seguro de responsabilidade civil — tudo incluído, sem custo.",
+    desc: "Contrato digital, nota fiscal automática, seguro de responsabilidade civil do COFEN e suporte jurídico — tudo incluído, você não paga nada a mais.",
   },
   {
     icon: Smartphone,
     number: "1",
     highlight: "app pra tudo",
-    desc: "Chamados, agenda, pagamentos e suporte em um único lugar. Do cadastro ao recebimento, no celular.",
+    desc: "Aceite chamados, veja sua agenda, assine atendimentos digitalmente e acompanhe cada pagamento — tudo no celular, em tempo real.",
   },
 ];
 

@@ -47,10 +47,19 @@ export function HeroSection() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
-              Conectamos profissionais de saúde autônomos a chamados domiciliares —
-              na sua região, no seu horário, com pagamento garantido.
+            <p className="text-lg sm:text-xl text-white/70 mb-6 max-w-xl leading-relaxed">
+              Conectamos profissionais de saúde a <strong className="text-white/90">chamados domiciliares</strong> —
+              atendimentos em domicílio na sua cidade, no seu horário, com pagamento garantido.
             </p>
+
+            {/* Specialty chips */}
+            <div className="flex flex-wrap gap-2 mb-10">
+              {["Enfermeiro(a)", "Téc. Enfermagem", "Fisioterapeuta", "Médico(a)", "Fonoaudiólogo(a)", "Nutricionista"].map((s) => (
+                <span key={s} className="text-xs font-semibold bg-white/10 text-white/80 border border-white/15 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                  {s}
+                </span>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

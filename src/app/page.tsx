@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { PartnersSection } from "@/components/home/PartnersSection";
+import { EspecialidadesSection } from "@/components/home/EspecialidadesSection";
 import { ComoFuncionaSection } from "@/components/home/ComoFuncionaSection";
 import { VantagensSection } from "@/components/home/VantagensSection";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
@@ -23,6 +24,8 @@ export default function HomePage() {
       <HeroSection />
 
       <FadeInSection><PartnersSection /></FadeInSection>
+
+      <FadeInSection><EspecialidadesSection /></FadeInSection>
 
       <ComoFuncionaSection />
 

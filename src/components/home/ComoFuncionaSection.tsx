@@ -12,14 +12,14 @@ const steps = [
   {
     number: "02",
     title: "Receba chamados na sua região",
-    desc: "O app notifica você sobre oportunidades próximas. Aceite ou recuse — você decide sempre.",
+    desc: "Um chamado é uma solicitação de atendimento domiciliar: curativo, medicação, fisioterapia, acompanhamento pós-cirurgia e mais. O app notifica você com valor, distância e horário — aceite ou recuse, você decide sempre.",
     photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
     dark: true,
   },
   {
     number: "03",
     title: "Atenda e receba em até 7 dias",
-    desc: "Realize o atendimento, registre no app e o pagamento cai na sua conta. Simples assim.",
+    desc: "Realize o atendimento, confirme no app com a assinatura digital do paciente e o pagamento cai direto na sua conta em até 7 dias. Sem intermediários, sem taxa surpresa.",
     photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=900&q=80",
     dark: false,
   },
