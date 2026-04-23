@@ -1,89 +1,91 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle2, Star, MapPin, Clock } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
+
+const stats = [
+  { value: "+1.200", label: "Profissionais parceiros" },
+  { value: "NPS 90+", label: "Satisfação garantida" },
+  { value: "4x mais", label: "Ganhos vs. mercado" },
+  { value: "<48h", label: "Para começar" },
+];
 
 export function HeroSection() {
   return (
-    <section className="pt-16 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-24">
-          {/* Left */}
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-black text-isa-gray-800 leading-tight mb-6">
-              O futuro da pen drive é em casa
+    <section className="relative min-h-screen flex flex-col">
+
+      {/* Background photo + overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=85"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/65 to-isa-pink-900/60" />
+      </div>
+
+      {/* Main content */}
+      <div className="relative flex-1 flex items-center pt-28 pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-3xl">
+
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full mb-8 border border-white/20">
+              <BadgeCheck className="w-3.5 h-3.5 text-isa-pink-300" />
+              Para profissionais de saúde autônomos
+            </div>
+
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-white leading-[0.92] mb-8 tracking-tight">
+              Trabalhe<br />
+              livre.<br />
+              <span style={{
+                background: "linear-gradient(135deg, #F0439E 0%, #FF80C8 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+                Ganhe<br />muito mais.
+              </span>
             </h1>
-            <p className="text-lg text-isa-gray-600 mb-8 leading-relaxed max-w-lg">
-              Cuidado domiciliar com tecnologia, segurança clínica e atendimento humanizado.
+
+            <p className="text-lg sm:text-xl text-white/70 mb-10 max-w-xl leading-relaxed">
+              Conectamos profissionais de saúde autônomos a chamados domiciliares —
+              na sua região, no seu horário, com pagamento garantido.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/contato"
-                className="border-2 border-isa-teal-500 text-isa-teal-600 font-semibold px-7 py-3 rounded-pill hover:bg-isa-teal-50 transition-colors text-sm"
+                href="/trabalhe-conosco"
+                className="inline-flex items-center justify-center gap-2 bg-isa-pink-500 hover:bg-isa-pink-400 text-white font-black px-8 py-4 rounded-2xl text-base transition-all hover:-translate-y-0.5 shadow-xl shadow-isa-pink-900/50"
               >
-                Fale com Nosso Time
+                Quero me cadastrar
+                <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="/para-pacientes"
-                className="border-2 border-isa-teal-500 text-isa-teal-600 font-semibold px-7 py-3 rounded-pill hover:bg-isa-teal-50 transition-colors text-sm"
+                href="#como-funciona"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl text-base transition-all border border-white/25"
               >
-                Conheça as Soluções
+                Como funciona
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-isa-teal-500" />
-                <div>
-                  <p className="font-bold text-isa-gray-800 text-sm">500 milhões+</p>
-                  <p className="text-xs text-isa-gray-500">Atendimentos/ano</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-isa-teal-500" />
-                <div>
-                  <p className="font-bold text-isa-gray-800 text-sm">NPS 90+</p>
-                  <p className="text-xs text-isa-gray-500">Satisfação</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-isa-teal-500" />
-                <div>
-                  <p className="font-bold text-isa-gray-800 text-sm">5 Estados</p>
-                  <p className="text-xs text-isa-gray-500">SP, GO, DF, MG e +</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right */}
-          <div className="relative">
-            <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-isa-teal-50 via-isa-teal-100 to-isa-teal-200 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-40 h-40 mx-auto rounded-full bg-isa-teal-300/50 flex items-center justify-center mb-4">
-                  <svg className="w-24 h-24 text-isa-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <p className="text-isa-teal-700 font-semibold text-lg">Profissional ISA</p>
-                <p className="text-isa-teal-600 text-sm mt-1">Atendimento domiciliar</p>
-              </div>
-            </div>
-
-            {/* Floating card */}
-            <div className="absolute bottom-4 right-4 bg-white rounded-2xl shadow-card-hover p-4 max-w-[200px]">
-              <div className="flex items-center gap-2 mb-1">
-                <Clock className="w-4 h-4 text-isa-pink-500" />
-                <span className="text-xs font-bold text-isa-gray-800">Atendimento 24h</span>
-              </div>
-              <p className="text-xs text-isa-gray-500 leading-relaxed">
-                Todos os dias da semana, 24 horas por dia.
-              </p>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Stats strip */}
+      <div className="relative bg-black/50 backdrop-blur-md border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <p className="text-2xl sm:text-3xl font-black text-white leading-none mb-1">{s.value}</p>
+                <p className="text-xs sm:text-sm text-white/50 font-medium">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

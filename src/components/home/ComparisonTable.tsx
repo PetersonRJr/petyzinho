@@ -14,65 +14,19 @@ type Row = {
 };
 
 const rows: Row[] = [
-  {
-    feature: "Flexibilidade de horários",
-    isa: "yes",
-    isaNote: "Total — você escolhe",
-    clt: "no",
-    agency: "partial",
-  },
-  {
-    feature: "Renda competitiva",
-    isa: "yes",
-    isaNote: "Maior ticket médio",
-    clt: "partial",
-    agency: "partial",
-  },
-  {
-    feature: "Pagamento rápido",
-    isa: "yes",
-    isaNote: "Em até 7 dias úteis",
-    clt: "partial",
-    agency: "partial",
-  },
-  {
-    feature: "Sem burocracia",
-    isa: "yes",
-    isaNote: "100% digital",
-    clt: "no",
-    agency: "partial",
-  },
-  {
-    feature: "Suporte jurídico",
-    isa: "yes",
-    clt: "yes",
-    agency: "no",
-  },
-  {
-    feature: "Escolha seus chamados",
-    isa: "yes",
-    clt: "no",
-    agency: "no",
-  },
-  {
-    feature: "Sem mínimo de horas",
-    isa: "yes",
-    clt: "no",
-    agency: "partial",
-  },
-  {
-    feature: "Crescimento profissional",
-    isa: "yes",
-    clt: "partial",
-    agency: "no",
-  },
+  { feature: "Flexibilidade de horários", isa: "yes", isaNote: "Total — você escolhe", clt: "no", agency: "partial" },
+  { feature: "Renda competitiva", isa: "yes", isaNote: "Maior ticket médio", clt: "partial", agency: "partial" },
+  { feature: "Pagamento rápido", isa: "yes", isaNote: "Em até 7 dias úteis", clt: "partial", agency: "partial" },
+  { feature: "Sem burocracia", isa: "yes", isaNote: "100% digital", clt: "no", agency: "partial" },
+  { feature: "Suporte jurídico", isa: "yes", clt: "yes", agency: "no" },
+  { feature: "Escolha seus chamados", isa: "yes", clt: "no", agency: "no" },
+  { feature: "Sem mínimo de horas", isa: "yes", clt: "no", agency: "partial" },
+  { feature: "Crescimento profissional", isa: "yes", clt: "partial", agency: "no" },
 ];
 
 function StatusIcon({ status }: { status: Status }) {
-  if (status === "yes")
-    return <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />;
-  if (status === "no")
-    return <XCircle className="w-5 h-5 text-red-400 mx-auto" />;
+  if (status === "yes") return <CheckCircle2 className="w-5 h-5 text-green-500 mx-auto" />;
+  if (status === "no") return <XCircle className="w-5 h-5 text-red-400 mx-auto" />;
   return <MinusCircle className="w-5 h-5 text-yellow-400 mx-auto" />;
 }
 
@@ -87,7 +41,6 @@ export function ComparisonTable() {
         />
 
         <div className="bg-white rounded-2xl shadow-card overflow-hidden">
-          {/* Header */}
           <div className="grid grid-cols-4 bg-isa-gray-50 border-b border-isa-gray-200">
             <div className="p-4 text-sm font-semibold text-isa-gray-500">Critério</div>
             <div className="p-4 text-center">
@@ -95,15 +48,10 @@ export function ComparisonTable() {
                 ISA Saúde
               </span>
             </div>
-            <div className="p-4 text-center text-sm font-semibold text-isa-gray-500">
-              CLT
-            </div>
-            <div className="p-4 text-center text-sm font-semibold text-isa-gray-500">
-              Agência
-            </div>
+            <div className="p-4 text-center text-sm font-semibold text-isa-gray-500">CLT</div>
+            <div className="p-4 text-center text-sm font-semibold text-isa-gray-500">Agência</div>
           </div>
 
-          {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={row.feature}
@@ -133,15 +81,9 @@ export function ComparisonTable() {
         </div>
 
         <div className="flex gap-6 mt-5 justify-center text-xs text-isa-gray-500">
-          <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-green-500" /> Sim
-          </span>
-          <span className="flex items-center gap-1.5">
-            <MinusCircle className="w-4 h-4 text-yellow-400" /> Parcial
-          </span>
-          <span className="flex items-center gap-1.5">
-            <XCircle className="w-4 h-4 text-red-400" /> Não
-          </span>
+          <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-green-500" /> Sim</span>
+          <span className="flex items-center gap-1.5"><MinusCircle className="w-4 h-4 text-yellow-400" /> Parcial</span>
+          <span className="flex items-center gap-1.5"><XCircle className="w-4 h-4 text-red-400" /> Não</span>
         </div>
       </div>
     </section>

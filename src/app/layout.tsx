@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ChatBotWidget } from "@/components/chatbot/ChatBotWidget";
+import { BackToTop } from "@/components/ui/BackToTop";
+import { CookieConsent } from "@/components/ui/CookieConsent";
+
+const nunito = Nunito({
+  subsets: ["latin-ext"],
+  weight: ["900"],
+  variable: "--font-nunito",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -33,12 +43,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={nunito.variable}>
       <body className="font-sans antialiased bg-isa-gray-50 text-isa-gray-800">
         <Header />
         <main>{children}</main>
         <Footer />
         <ChatBotWidget />
+        <BackToTop />
+        <CookieConsent />
       </body>
     </html>
   );

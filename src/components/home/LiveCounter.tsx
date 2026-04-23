@@ -12,34 +12,10 @@ type Metric = {
 };
 
 const metrics: Metric[] = [
-  {
-    icon: Users,
-    label: "Profissionais online agora",
-    base: 47,
-    variance: 8,
-    suffix: "",
-  },
-  {
-    icon: Activity,
-    label: "Atendimentos realizados hoje",
-    base: 234,
-    variance: 12,
-    suffix: "",
-  },
-  {
-    icon: MapPin,
-    label: "Chamados em aberto",
-    base: 18,
-    variance: 5,
-    suffix: "",
-  },
-  {
-    icon: Clock,
-    label: "Tempo médio de resposta",
-    base: 8,
-    variance: 2,
-    suffix: " min",
-  },
+  { icon: Users,    label: "Profissionais online agora",    base: 47,  variance: 8,  suffix: "" },
+  { icon: Activity, label: "Atendimentos realizados hoje",  base: 234, variance: 12, suffix: "" },
+  { icon: MapPin,   label: "Chamados em aberto",            base: 18,  variance: 5,  suffix: "" },
+  { icon: Clock,    label: "Tempo médio de resposta",       base: 8,   variance: 2,  suffix: " min" },
 ];
 
 export function LiveCounter() {
@@ -48,9 +24,7 @@ export function LiveCounter() {
   useEffect(() => {
     const id = setInterval(() => {
       setValues(
-        metrics.map(
-          (m) => m.base + Math.round((Math.random() * 2 - 1) * m.variance)
-        )
+        metrics.map((m) => m.base + Math.round((Math.random() * 2 - 1) * m.variance))
       );
     }, 4000);
     return () => clearInterval(id);
@@ -68,16 +42,11 @@ export function LiveCounter() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {metrics.map((m, i) => (
-            <div
-              key={m.label}
-              className="flex flex-col items-center text-center gap-3"
-            >
+            <div key={m.label} className="flex flex-col items-center text-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                 <m.icon className="w-6 h-6 text-white/70" />
               </div>
-              <div
-                className="text-4xl font-black text-white tabular-nums transition-all duration-700"
-              >
+              <div className="text-4xl font-black text-white tabular-nums transition-all duration-700">
                 {values[i].toLocaleString("pt-BR")}
                 {m.suffix}
               </div>
