@@ -135,49 +135,76 @@ export default function ParaProfissionaisPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-isa-dark via-isa-pink-700 to-isa-pink-700 text-white pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-isa-dark via-isa-pink-700 to-isa-pink-600 text-white pt-32 pb-20 overflow-hidden hero-gradient-animate">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-white blur-3xl" />
+          <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-white blur-2xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <Tag variant="blue" className="mb-5 bg-white/15 text-white border-0">
-              Para Profissionais de Saúde
-            </Tag>
-            <h1 className="font-display font-extrabold text-4xl md:text-5xl mb-6 leading-tight">
-              Seja parceiro ISA.
-              <br />
-              Atenda no seu tempo. Ganhe mais.
-            </h1>
-            <p className="text-lg text-isa-pink-100 mb-4 max-w-2xl">
-              Mais de 1.200 profissionais autônomos usam a ISA para encontrar
-              oportunidades de atendimento domiciliar — com liberdade total,
-              sem vínculo empregatício.
-            </p>
-            <div className="flex items-center gap-2 mb-8">
-              <BadgeCheck className="w-4 h-4 text-isa-green-400" />
-              <span className="text-sm text-isa-green-300 font-medium">
-                100% autônomo · Sem vínculo trabalhista · Sem mínimo de atendimentos
-              </span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left — copy */}
+            <div>
+              <Tag variant="blue" className="mb-5 bg-white/15 text-white border-0">
+                Para Profissionais de Saúde
+              </Tag>
+              <h1 className="font-display font-extrabold text-4xl md:text-5xl mb-6 leading-tight">
+                Seja parceiro ISA.
+                <br />
+                Atenda no seu tempo. Ganhe mais.
+              </h1>
+              <p className="text-lg text-isa-pink-100 mb-4 max-w-2xl">
+                Mais de 1.200 profissionais autônomos usam a ISA para encontrar
+                oportunidades de atendimento domiciliar — com liberdade total,
+                sem vínculo empregatício.
+              </p>
+              <div className="flex items-center gap-2 mb-8">
+                <BadgeCheck className="w-4 h-4 text-isa-green-400" />
+                <span className="text-sm text-isa-green-300 font-medium">
+                  100% autônomo · Sem vínculo trabalhista · Sem mínimo de atendimentos
+                </span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  href="/trabalhe-conosco"
+                  variant="secondary"
+                  size="lg"
+                  rightIcon={<ArrowRight className="w-5 h-5" />}
+                  className="bg-white text-isa-pink-700 hover:bg-isa-gray-100"
+                >
+                  Quero ser parceiro
+                </Button>
+                <Button
+                  href="#como-funciona"
+                  variant="ghost"
+                  size="lg"
+                  className="text-white border-2 border-white/30 hover:bg-white/10"
+                >
+                  Ver como funciona
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                href="/trabalhe-conosco"
-                variant="secondary"
-                size="lg"
-                rightIcon={<ArrowRight className="w-5 h-5" />}
-                className="bg-white text-isa-pink-700 hover:bg-isa-gray-100"
-              >
-                Quero ser parceiro
-              </Button>
-              <Button
-                href="#como-funciona"
-                variant="ghost"
-                size="lg"
-                className="text-white border-2 border-white/30 hover:bg-white/10"
-              >
-                Ver como funciona
-              </Button>
+
+            {/* Right — photo */}
+            <div className="hidden lg:flex justify-center">
+              <div className="relative">
+                <div className="w-[420px] h-[480px] rounded-3xl overflow-hidden shadow-2xl animate-float">
+                  <img
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=840&q=80&auto=format&fit=crop"
+                    alt="Profissional de saúde sorrindo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-6 bg-white text-isa-gray-800 rounded-2xl shadow-xl px-5 py-3 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-isa-green-50 flex items-center justify-center">
+                    <BadgeCheck className="w-5 h-5 text-isa-green-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-isa-gray-500 font-medium">Profissionais ativos</p>
+                    <p className="text-lg font-extrabold text-isa-gray-900">+1.200</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

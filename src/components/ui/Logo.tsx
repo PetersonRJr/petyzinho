@@ -1,12 +1,16 @@
 interface LogoProps {
   variant?: "color" | "white";
   size?: "sm" | "md" | "lg";
+  className?: string;
 }
 
-const widths = { sm: 72, md: 90, lg: 115 };
+const sizeClasses = {
+  sm: "h-9 sm:h-8 w-auto",
+  md: "h-11 w-auto",
+  lg: "h-14 w-auto",
+};
 
-export function Logo({ variant = "color", size = "md" }: LogoProps) {
-  const w = widths[size];
+export function Logo({ variant = "color", size = "md", className = "" }: LogoProps) {
   const src = "/images/logo.png";
 
   return (
@@ -14,9 +18,8 @@ export function Logo({ variant = "color", size = "md" }: LogoProps) {
     <img
       src={src}
       alt="ISA Saúde"
-      width={w}
-      height={w}
-      style={{ objectFit: "contain", display: "block", mixBlendMode: "multiply" }}
+      className={`${sizeClasses[size]} object-contain block ${className}`}
+      style={{ mixBlendMode: variant === "white" ? "normal" : "multiply" }}
     />
   );
 }

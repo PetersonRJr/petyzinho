@@ -31,6 +31,21 @@ body {
 .animate-slideDown { animation: slideDown 0.25s ease-out; }
 .animate-slideUp   { animation: slideUp   0.2s  ease-in;  }
 
+@keyframes hero-gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+.hero-gradient-animate {
+  background-size: 300% 300%;
+  animation: hero-gradient 12s ease infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
