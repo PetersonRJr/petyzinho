@@ -7,6 +7,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { AppDownloadSection } from "@/components/home/AppDownloadSection";
 import { AppPreviewMockup } from "@/components/professionals/AppPreviewMockup";
+import { EarningsSimulator } from "@/components/home/EarningsSimulator";
+import { ComparisonTable } from "@/components/home/ComparisonTable";
+import { LiveCounter } from "@/components/home/LiveCounter";
+import { VagasMapSection } from "@/components/home/VagasMapSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { staggerContainer, fadeUpVariant } from "@/lib/animations";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
@@ -213,6 +218,21 @@ export default function ParaProfissionaisPage() {
       </section>
 
       <AppPreviewMockup />
+
+      {/* Live Counter */}
+      <LiveCounter />
+
+      {/* Earnings Simulator */}
+      <EarningsSimulator />
+
+      {/* Comparison Table */}
+      <ComparisonTable />
+
+      {/* Regional Demand */}
+      <VagasMapSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* How it works */}
       <section id="como-funciona" className="py-20 md:py-28 bg-isa-gray-50">
