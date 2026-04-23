@@ -24,7 +24,7 @@ export default function HomePage() {
 
       <FadeInSection><PartnersSection /></FadeInSection>
 
-      <FadeInSection id="como-funciona"><ComoFuncionaSection /></FadeInSection>
+      <ComoFuncionaSection />
 
       <FadeInSection><VantagensSection /></FadeInSection>
 
