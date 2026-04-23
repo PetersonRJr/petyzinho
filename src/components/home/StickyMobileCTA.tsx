@@ -22,7 +22,7 @@ export function StickyMobileCTA() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="bg-white border-t border-isa-gray-200 shadow-[0_-4px_24px_rgba(15,23,42,0.12)] px-4 py-3 flex items-center gap-3">
+      <div className="bg-white border-t border-isa-gray-200 shadow-[0_-4px_24px_rgba(15,23,42,0.12)] px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] flex items-center gap-3">
         <div className="flex-1 min-w-0">
           <p className="text-xs text-isa-gray-500 leading-tight">+1.200 profissionais já são ISA</p>
           <p className="text-sm font-bold text-isa-gray-800 leading-tight">Cadastre-se e ganhe mais</p>

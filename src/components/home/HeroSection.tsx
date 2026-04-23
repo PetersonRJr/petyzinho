@@ -94,8 +94,8 @@ export function HeroSection() {
           </div>
 
           {/* Right */}
-          <div className="relative">
-            <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+          <div className="relative pb-6 lg:pb-0">
+            <div className="w-full aspect-[4/4] sm:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5">
               <img
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80"
                 alt="Profissional de saúde atendendo paciente em casa"
@@ -108,21 +108,21 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Floating card — earnings */}
-            <div className="absolute -bottom-5 right-4 bg-white rounded-2xl shadow-xl p-4 min-w-[175px] border border-isa-gray-100">
+            {/* Floating card — earnings (hidden on xs, visible sm+) */}
+            <div className="hidden sm:block absolute -bottom-5 right-2 lg:right-4 bg-white rounded-2xl shadow-xl p-4 min-w-[165px] border border-isa-gray-100">
               <p className="text-xs text-isa-gray-400 mb-1">Ganho médio mensal</p>
               <p className="text-2xl font-black text-isa-gray-800 leading-none">R$ 6.800</p>
               <p className="text-xs text-isa-green-500 font-bold mt-1">↑ 4x mais que CLT</p>
             </div>
 
-            {/* Floating badge — available */}
-            <div className="absolute top-5 -left-4 bg-white rounded-2xl shadow-lg px-4 py-2.5 flex items-center gap-2 border border-isa-gray-100">
+            {/* Floating badge — available (lg+ only to avoid overflow) */}
+            <div className="hidden lg:flex absolute top-5 -left-4 bg-white rounded-2xl shadow-lg px-4 py-2.5 items-center gap-2 border border-isa-gray-100">
               <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
               <span className="text-xs font-bold text-isa-gray-700">Vagas abertas agora</span>
             </div>
 
-            {/* Floating vagas count */}
-            <div className="absolute top-28 -right-4 bg-isa-pink-500 rounded-2xl shadow-lg px-4 py-3 text-white text-center">
+            {/* Floating vagas count (lg+ only) */}
+            <div className="hidden lg:block absolute top-28 -right-4 bg-isa-pink-500 rounded-2xl shadow-lg px-4 py-3 text-white text-center">
               <p className="text-2xl font-black leading-none">91</p>
               <p className="text-[10px] font-semibold opacity-80 mt-0.5">vagas hoje</p>
             </div>

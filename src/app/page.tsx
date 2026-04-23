@@ -7,6 +7,7 @@ import { StatsSection } from "@/components/home/StatsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CTASection } from "@/components/home/CTASection";
 import { EarningsSimulator } from "@/components/home/EarningsSimulator";
+import { OportunidadesSection } from "@/components/home/OportunidadesSection";
 import { VagasMapSection } from "@/components/home/VagasMapSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { NoticiasSection } from "@/components/home/NoticiasSection";
@@ -28,6 +29,8 @@ export default function HomePage() {
       <FadeInSection><VantagensSection /></FadeInSection>
 
       <FadeInSection><EarningsSimulator /></FadeInSection>
+
+      <FadeInSection><OportunidadesSection /></FadeInSection>
 
       <FadeInSection><VagasMapSection /></FadeInSection>
 
