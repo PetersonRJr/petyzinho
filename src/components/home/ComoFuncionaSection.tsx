@@ -6,34 +6,34 @@ const steps = [
     number: "01",
     icon: UserPlus,
     title: "Crie seu perfil",
-    desc: "Cadastre-se gratuitamente, envie seus documentos e tenha seu perfil verificado em até 24h.",
-    color: "bg-isa-pink-50",
-    iconColor: "text-isa-pink-500",
-    ring: "ring-isa-pink-200",
+    desc: "Cadastre-se gratuitamente, envie seus documentos e tenha seu perfil verificado em até 48h.",
+    gradient: "from-isa-pink-400 to-isa-pink-600",
+    glow: "shadow-isa-pink-200",
+    photo: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&q=80",
   },
   {
     number: "02",
     icon: BellRing,
     title: "Receba oportunidades",
-    desc: "O app notifica em tempo real sobre vagas próximas a você, de acordo com sua especialidade e disponibilidade.",
-    color: "bg-isa-teal-50",
-    iconColor: "text-isa-teal-600",
-    ring: "ring-isa-teal-200",
+    desc: "O app notifica em tempo real sobre chamados próximos a você, de acordo com sua especialidade.",
+    gradient: "from-isa-teal-500 to-isa-teal-700",
+    glow: "shadow-teal-200",
+    photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=500&q=80",
   },
   {
     number: "03",
     icon: BadgeDollarSign,
     title: "Atenda e ganhe",
-    desc: "Realize o atendimento, registre tudo no app e receba o pagamento em até 24h direto na sua conta.",
-    color: "bg-green-50",
-    iconColor: "text-green-600",
-    ring: "ring-green-200",
+    desc: "Realize o atendimento, registre no app e receba o pagamento em até 7 dias direto na sua conta.",
+    gradient: "from-isa-green-400 to-isa-green-600",
+    glow: "shadow-green-200",
+    photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=80",
   },
 ];
 
 export function ComoFuncionaSection() {
   return (
-    <section className="py-20 bg-isa-gray-50">
+    <section id="como-funciona" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -42,7 +42,7 @@ export function ComoFuncionaSection() {
             Simples assim
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-isa-gray-800 mb-3">
-            Como funciona para profissionais
+            Do cadastro ao primeiro pagamento
           </h2>
           <p className="text-isa-gray-500 max-w-md mx-auto">
             Em 3 passos você começa a trabalhar com autonomia e receber acima da média
@@ -50,36 +50,46 @@ export function ComoFuncionaSection() {
         </div>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-16 left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 bg-gradient-to-r from-isa-pink-200 via-isa-teal-200 to-green-200" />
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {steps.map((step) => {
+            const Icon = step.icon;
+            return (
+              <div key={step.number} className="group relative bg-white rounded-3xl border border-isa-gray-100 hover:border-isa-pink-200 hover:shadow-card-hover transition-all overflow-hidden">
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {steps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div key={step.number} className="flex flex-col items-center text-center">
-                  {/* Icon circle */}
-                  <div className={`relative w-32 h-32 rounded-full ${step.color} ring-4 ${step.ring} flex items-center justify-center mb-6 z-10`}>
-                    <Icon className={`w-12 h-12 ${step.iconColor}`} />
-                    {/* Number badge */}
-                    <span className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full border-2 border-isa-gray-100 flex items-center justify-center text-xs font-black text-isa-gray-800 shadow-sm">
-                      {step.number}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-black text-isa-gray-800 mb-3">{step.title}</h3>
-                  <p className="text-isa-gray-500 leading-relaxed text-sm max-w-xs">{step.desc}</p>
+                {/* Photo strip */}
+                <div className="h-44 overflow-hidden">
+                  <img
+                    src={step.photo}
+                    alt={step.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-black/20 to-transparent" />
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Step number badge */}
+                <div className="absolute top-4 right-4 w-9 h-9 bg-white rounded-full shadow-md flex items-center justify-center">
+                  <span className="text-xs font-black text-isa-gray-700">{step.number}</span>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${step.gradient} shadow-lg ${step.glow} flex items-center justify-center mb-4`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-black text-isa-gray-800 mb-2">{step.title}</h3>
+                  <p className="text-isa-gray-500 leading-relaxed text-sm">{step.desc}</p>
+                </div>
+
+              </div>
+            );
+          })}
         </div>
 
         {/* CTA */}
-        <div className="mt-14 text-center">
+        <div className="mt-12 text-center">
           <Link
             href="/portal-isa"
-            className="inline-flex items-center gap-2 bg-isa-pink-500 hover:bg-isa-pink-600 text-white font-bold px-8 py-3.5 rounded-pill transition-colors"
+            className="inline-flex items-center gap-2 bg-isa-pink-500 hover:bg-isa-pink-600 text-white font-bold px-8 py-3.5 rounded-pill shadow-lg shadow-isa-pink-200 hover:-translate-y-0.5 transition-all"
           >
             Quero começar agora
           </Link>
